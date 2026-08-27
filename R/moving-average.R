@@ -1,7 +1,11 @@
 # The input to this function should be a data frame containing stream chemistry data
 moving_average <- function(BQ1) {
   result <- tibble(
-    window_start = seq(ymd("1989-05-20"), ymd("1999-12-27"), by = "9 weeks"),
+    window_start = seq(
+      ymd(df$Sample_Date[1]),
+      ymd(df$Sample_Date[nrow(df)]),
+      by = paste(num_weeks, "weeks")
+    ),
     k_mgl = NA,
     mg_mgl = NA,
     no3_mgl = NA,

@@ -40,3 +40,11 @@ for (i in 1:nrow(result)) {
   result$ca_mgl[i] <- mean(ca_window, na.rm = TRUE)
 }
 result
+
+glimpse(BQ1)
+BQ1$Sample_Date
+df <- BQ1 |>
+  inner_join(
+    select(Sample_Date, Sample_ID, `NO3-N`, K, Mg, `NH4-N`, Ca),
+    join_by(Sample_Date)
+  )

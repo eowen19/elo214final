@@ -1,13 +1,13 @@
 library(tidyverse)
 library(lubridate)
-bisley <- read_csv("data/QuebradaCuenca1-Bisley.csv")
-glimpse(bisley)
+BQ1 <- read_csv("data/QuebradaCuenca1-Bisley.csv")
+glimpse(BQ1)
 
 
 bisley_2 <- tibble(
   start = seq(
-    bisley$Sample_Date[1],
-    bisley$Sample_Date[nrow(bisley)],
+    BQ1$Sample_Date[1],
+    BQ1$Sample_Date[nrow(bisley)],
     by = "9*7"
   ),
   K = NA,

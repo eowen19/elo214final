@@ -4,7 +4,7 @@ BQ1 <- read_csv("data/QuebradaCuenca1-Bisley.csv")
 BQ2 <- read_csv("data/QuebradaCuenca2-Bisley.csv")
 BQ3 <- read_csv("data/QuebradaCuenca3-Bisley.csv")
 PRM <- read_csv("data/RioMameyesPuenteRoto.csv")
-df <- c(BQ1, BQ2, BQ3, PRM)
 
-source("R/moving_average.R")
-moving_average(BQ1)
+
+source("R/moving-average.R")
+moving_average(BQ1, 9)

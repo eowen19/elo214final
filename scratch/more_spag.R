@@ -1,6 +1,9 @@
 library(tidyverse)
 library(lubridate)
-bisley <- read_csv("data/QuebradaCuenca1-Bisley.csv")
+BQ1 <- read_csv("data/QuebradaCuenca1-Bisley.csv")
+BQ2 <- read_csv("data/QuebradaCuenca2-Bisley.csv")
+BQ3 <- read_csv("data/QuebradaCuenca3-Bisley.csv")
+PRM <- read_csv("data/RioMameyesPuenteRoto.csv")
 
 result <- tibble(
   window_start = seq(
@@ -43,8 +46,6 @@ result
 
 glimpse(BQ1)
 BQ1$Sample_Date
-df <- BQ1 |>
-  inner_join(
-    select(Sample_Date, Sample_ID, `NO3-N`, K, Mg, `NH4-N`, Ca),
-    join_by(Sample_Date)
-  )
+
+
+source("R/moving-average.R")

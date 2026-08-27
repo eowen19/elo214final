@@ -1,11 +1,12 @@
 # The input to this function should be a data frame containing stream chemistry data
-moving_average <- function(df) {
+moving_average <- function(BQ1) {
   result <- tibble(
     window_start = seq(ymd("1989-05-20"), ymd("1999-12-27"), by = "9 weeks"),
     k_mgl = NA,
     mg_mgl = NA,
     no3_mgl = NA,
-    nh4_mgl = NA
+    nh4_mgl = NA,
+    ca_mgl = NA
   )
   result
 
@@ -13,13 +14,13 @@ moving_average <- function(df) {
     w1 <- result$window_start[i]
     w2 <- w1 + weeks(9)
 
-    in_window <- df$Sample_Date >= w1 & df$Sample_Date < w2
+    in_window <- BQ1$Sample_Date >= w1 & BQ1$Sample_Date < w2
 
-    k_window <- df$K[in_window]
-    mg_window <- df$Mg[in_window]
-    no3_window <- df$`NO3-N`[in_window]
-    nh4_window <- df$`NH4-N`[in_window]
-    ca_window <- df$Ca[in_window]
+    k_window <- BQ1$K[in_window]
+    mg_window <- BQ1$Mg[in_window]
+    no3_window <- BQ1$`NO3-N`[in_window]
+    nh4_window <- BQ1$`NH4-N`[in_window]
+    ca_window <- BQ1$Ca[in_window]
 
     result$k_mgl[i] <- mean(k_window, na.rm = TRUE)
     result$mg_mgl[i] <- mean(mg_window, na.rm = TRUE)

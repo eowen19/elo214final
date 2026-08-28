@@ -7,13 +7,12 @@ The data is sourced from McDowell, W. and International Institute of Tropical Fo
 
 # Methods
 ```{r}
-bind_data <- read.csv("../output/binddata.csv")
+library(tidyverse)
+bind_data <- read_csv("../output/binddata.csv")
 ```
 
 # Results 
 ```{r}
-library(tidyverse)
-library(lubridate)
 hurricane_date <- ymd("1989-09-10")
 
 #pivot the dataframe
@@ -54,13 +53,9 @@ ggplot(
   theme_bw() +
   facet_wrap(vars(Ions), scales = 'free', ncol = 1, strip.position = "left") +
   labs(
-    x = "Years",
+    x = "Year",
     y = "Ions",
-    linetype = NULL
-  ) +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    strip.position = "outside"
+    linetype = "Sites"
   )
+
 ```

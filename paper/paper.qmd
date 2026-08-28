@@ -3,7 +3,7 @@
 This code and process recreates a figure from Schaefer et al. (2000) showing the concentration levels of K (potassium), NO3 (nitrate), Mg (magnesium), Ca (calcium) and NH4 (ammonium) in a stream in Bisley, Puerto Rico pre- and post- Hurricane Hugo (1988). 
 
 # Data
-The data is sourced from McDowell, W. and International Institute of Tropical Forestry(IITF), USDA Forest Service.. 2024. Chemistry of stream water from the Luquillo Mountains ver 4923064. Environmental Data Initiative. https://doi.org/10.6073/pasta/f31349bebdc304f758718f4798d25458 (Accessed 2026-08-27). In the interest of recreates the original Schaefer et al., the data has been filtered to only 1988 - 1994.   
+The data is sourced from McDowell, W. and International Institute of Tropical Forestry(IITF), USDA Forest Service.. 2024. Chemistry of stream water from the Luquillo Mountains ver 4923064. Environmental Data Initiative. https://doi.org/10.6073/pasta/f31349bebdc304f758718f4798d25458 (Accessed 2026-08-27). In the interest of recreating the original Schaefer et al., the data has been filtered to only 1988 - 1994.   
 
 # Methods
 ```{r}

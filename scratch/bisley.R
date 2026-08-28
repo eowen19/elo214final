@@ -88,3 +88,5 @@ ggplot(
     panel.grid.minor = element_blank(),
     strip.position = "outside"
   )
+
+bind_data <- read_csv("output/binddata.csv")

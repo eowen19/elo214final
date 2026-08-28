@@ -45,3 +45,10 @@ bind_data <- bind_rows(
 
 #put bound dataframe into output folder
 write_csv(bind_data, "output/binddata.csv")
+
+bind_longer <- bind_data |>
+  pivot_longer(
+    names_to = "Ions",
+    values_to = "Concentrations",
+    cols = c(k_mgl, mg_mgl, ca_mgl, no3_mgl, nh4_mgl)
+  )

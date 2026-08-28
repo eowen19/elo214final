@@ -81,12 +81,8 @@ ggplot(
   labs(
     x = "Years",
     y = "Ions",
-    linetype = NULL
+    linetype = "sites",
   ) +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    strip.position = "outside"
-  )
+  theme()
 
-bind_data <- read_csv("output/binddata.csv")
+#bind_data <- read_csv("output/binddata.csv")

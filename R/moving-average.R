@@ -4,7 +4,7 @@ moving_average <- function(df, num_week) {
     window_start = seq(
       ymd(df$Sample_Date[1]),
       ymd(df$Sample_Date[nrow(df)]),
-      by = paste(num_weeks, "weeks")
+      by = paste(num_week, "weeks")
     ),
     k_mgl = NA,
     mg_mgl = NA,
@@ -16,7 +16,7 @@ moving_average <- function(df, num_week) {
 
   for (i in 1:nrow(result)) {
     w1 <- result$window_start[i]
-    w2 <- w1 + weeks(9)
+    w2 <- w1 + weeks(num_week)
 
     in_window <- df$Sample_Date >= w1 & df$Sample_Date < w2
 
@@ -32,6 +32,6 @@ moving_average <- function(df, num_week) {
     result$nh4_mgl[i] <- mean(nh4_window, na.rm = TRUE)
     result$ca_mgl[i] <- mean(ca_window, na.rm = TRUE)
   }
-  return(moving_average)
+  return(result)
 }
-moving_average(BQ1, 9)
+moving_average(df = BQ1, num_week = 9)

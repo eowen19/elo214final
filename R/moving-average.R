@@ -10,13 +10,15 @@ moving_average <- function(df, num_week) {
     mg_mgl = NA,
     no3_mgl = NA,
     nh4_mgl = NA,
-    ca_mgl = NA
+    ca_mgl = NA,
+    site = NA
   )
   result
 
   for (i in 1:nrow(result)) {
     w1 <- result$window_start[i]
     w2 <- w1 + weeks(num_week)
+    site <- df$Sample_ID
 
     in_window <- df$Sample_Date >= w1 & df$Sample_Date < w2
 
@@ -31,6 +33,7 @@ moving_average <- function(df, num_week) {
     result$no3_mgl[i] <- mean(no3_window, na.rm = TRUE)
     result$nh4_mgl[i] <- mean(nh4_window, na.rm = TRUE)
     result$ca_mgl[i] <- mean(ca_window, na.rm = TRUE)
+    result$site[i] <- df$Sample_ID
   }
   return(result)
 }

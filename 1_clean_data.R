@@ -89,7 +89,7 @@ ggplot(
   labs(
     x = "Years",
     y = "Ions",
-    linetype = NULL
+    linetype = "Sites"
   ) +
   theme(
     panel.grid.major = element_blank(),
